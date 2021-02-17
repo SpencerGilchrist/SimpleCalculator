@@ -9,11 +9,42 @@ Module SimpleCalculator
 
         Dim FirstNumber As String
         Dim SecondNumber As String
+        Dim UserInput As String
+        Dim Problem As Boolean
 Line1:
+
         Console.WriteLine("Enter a Number!")
-        FirstNumber = Console.ReadLine()
+
+
+        Try
+            UserInput = Console.ReadLine
+            FirstNumber = CInt(UserInput)
+            Problem = False
+
+        Catch e As Exception
+            Console.WriteLine("You Entered a Letter in a calculator?")
+            System.Threading.Thread.Sleep(1500)
+            Console.WriteLine("Try a number this time")
+            System.Threading.Thread.Sleep(2500)
+            Console.Clear()
+            GoTo Line1
+        End Try
+
         Console.WriteLine("Enter another number!")
-        SecondNumber = Console.ReadLine()
+
+        Try
+            UserInput = Console.ReadLine
+            SecondNumber = CInt(UserInput)
+            Problem = False
+
+        Catch e As Exception
+            Console.WriteLine("You Entered a Letter in a calculator?")
+            System.Threading.Thread.Sleep(1500)
+            Console.WriteLine("Try a number this time")
+            System.Threading.Thread.Sleep(2500)
+            Console.Clear()
+            GoTo Line1
+        End Try
 
         Console.WriteLine("Please Choose a funtion.")
         System.Threading.Thread.Sleep(1500)
